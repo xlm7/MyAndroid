@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#d3d3d3"
+    >		
+     
+     <com.example.android_picture.PaintView
+         android:id="@+id/paint_layout"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_above="@+id/button11" >
+         	 
+          </com.example.android_picture.PaintView>
+
+         <Button
+             android:id="@+id/button11"
+             android:layout_width="wrap_content"
+             android:layout_height="40dp"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentLeft="true"
+             android:layout_alignTop="@+id/button13"
+             android:background="@drawable/pen" />
+
+         <Button
+             android:id="@+id/button13"
+             android:layout_width="wrap_content"
+             android:layout_height="40dp"
+             android:layout_alignParentBottom="true"
+             android:layout_alignTop="@+id/button14"
+             android:layout_toRightOf="@+id/button11"
+             android:background="@drawable/redo" />
+
+         <Button
+             android:id="@+id/button12"
+             android:layout_width="wrap_content"
+             android:layout_height="40dp"
+             android:layout_alignParentBottom="true"
+             android:layout_alignTop="@+id/button13"
+             android:layout_toRightOf="@+id/button13"
+             android:background="@drawable/save" />
+
+         <Button
+             android:id="@+id/button14"
+             android:layout_width="wrap_content"
+             android:layout_height="40dp"
+             android:layout_alignParentBottom="true"
+             android:layout_toRightOf="@+id/button12"
+             android:background="@drawable/set" />
+
+         <Button
+             android:id="@+id/button15"
+             android:layout_width="60dp"
+             android:layout_height="40dp"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentRight="true"
+             android:layout_alignTop="@+id/button14"
+             android:layout_toRightOf="@+id/button14"
+             android:background="@drawable/add"
+              />
+    
+</RelativeLayout>
