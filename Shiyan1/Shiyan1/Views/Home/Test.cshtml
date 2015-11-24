@@ -1,0 +1,216 @@
+﻿
+@{
+    ViewBag.Title = "Test";
+}
+<div>
+    <font size=6 color=red id="font1">
+        请输入个人详细信息
+    </font>
+</div>
+<form name=" form1"  action="Show" method="post">
+
+    &nbsp;&nbsp;&nbsp;&nbsp;用户名：<input type="text" id="username" name="username" onblur="checkName(this.value)">
+    <div id="name_error" color="red" class="item_error" style="display:none"><font color="red">* 用户名为6-10个小写字母</font></div>
+    <div id="regist_error" color="red" class="item_error" style="display:none"><font color="red">* 已注册</font></div><br/>
+    
+   
+   
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;密码：<input type="password" id="psd1" name="psd1" onblur="checkPwd(this.value)">
+    <div id="pwd_error" class="item_error"  style="display:none"><font color="red">* 密码为6个字符</font></div><br/>
+   
+    确认密码：<input type="password" id="psd2" name="psd2" onblur="verifyPwd(this.value)" >
+    <div id="verifypwd_error"  class="item_error" style="display:none"><font color="red">* 密码与确认密码不一致</font></div><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;性别：<input type="radio" name="sex" value="男" >男
+    <input type="radio" name="sex" value="女" class="item_error">女<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;籍贯：
+
+
+    <select id="province" name="province" onchange="setSecond(this)">
+        <option value="湖北" name="province" >湖北</option>
+        <option value="湖南" name="province" >湖南</option>
+        <option value="广东" name="province" >广东</option>
+        <option value="河北" name="province" >河北</option>
+    </select>
+    <select id="city" name="city" >
+        
+    </select><br /><br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email：<input type="email" id="email" name="email" placeholder="如：xlm@163.com " onblur="checkEmail(this.value)"><br />
+    <div id="email_error"  class="item_error" style="display:none"><font color="red" >* 邮箱格式有误</font></div><br/>
+    &nbsp;&nbsp;&nbsp;&nbsp;手机号：<input type="text" id="phone" name="phone" placeholder="11位 全数字" onblur="checkPhone(this.value)">
+    <div id="phone_error"  class="item_error" style="display:none"><font color="red" >* 手机号是1569开头</font></div><br />
+    专业擅长：
+    <select id="master" size=3 multiple="multiple">
+        <option value="Windows编程">Windows编程</option>
+        <option value="单片机编程">单片机编程</option>
+        <option value="ASP.NET编程 ">ASP.NET编程</option>
+        <option value=" J2EE编程">J2EE编程</option>
+        <option value="Java语言编程 ">C语言编程</option>
+    </select><br /><br />
+    业余爱好：<input type="checkbox" name="like" value="足球">足球
+    <input type="checkbox" name="like" value="篮球">篮球
+    <input type="checkbox" name="like" value="排球">排球
+    <input type="checkbox" name="like" value="唱歌">唱歌
+    <input type="checkbox" name="like" value="其他">其他<br /><br />
+    个人照片：<input type="file" id="filename"><br /><br />
+    出生年月：<input type="text" id="data"><br /><br />
+    备注信息：
+    <textarea name="beizhu" placeholder="可以补充一下" id="beizhu"></textarea><br /><br />
+   <input type="submit" value=" 提交" id="submit" />
+    <input type="reset"  value="重填" id="reset"/>
+</form>
+@section scripts { 
+<script src="~/jquery-ui-1.11.1.custom/external/jquery/jquery.js"></script>
+<script src="~/jquery-ui-1.11.1.custom/jquery-ui.js"></script> <link href="~/jquery-ui-1.11.1.custom/jquery-ui.css" rel="stylesheet"> 
+<script> $(document).ready(function () { $("#data").datepicker( { dateFormat: "yy-mm-dd", inline: true } ); }); </script>
+
+<script>
+
+function setSecond(obj){
+    var val = obj.value;
+    if(val == '湖北'){
+        var sec = document.getElementById('city');
+        sec.length = 0;//先清空city下拉列表
+        sec.options[0] = new Option("武汉", "武汉");
+        sec.options[1] = new Option("孝感", "孝感");
+        sec.options[2] = new Option("宜昌", "宜昌");
+        sec.options[3] = new Option("襄阳", "襄阳");
+    } else if (val == '湖南') {
+        var sec = document.getElementById('city');
+        sec.length = 0;//先清空city下拉列表
+        sec.options[0] = new Option("长沙", "长沙");
+        sec.options[1] = new Option("岳阳", "岳阳");//可设置循环配置，也可一个一个配置
+        sec.options[2] = new Option("怀化", "怀化");
+        sec.options[3] = new Option("永州", "永州");
+    } else if (val == '广东') {
+        var sec = document.getElementById('city');
+        sec.length = 0;//先清空city下拉列表
+        sec.options[0] = new Option("广州", "广州");
+        sec.options[1] = new Option("深圳", "深圳");//可设置循环配置，也可一个一个配置
+    } else if (val == '河北') {
+        var sec = document.getElementById('city');
+        sec.length = 0;//先清空city下拉列表
+        sec.options[0] = new Option("石家庄", "石家庄");
+        sec.options[1] = new Option("唐山", "唐山");
+        sec.options[2] = new Option("秦皇岛", "秦皇岛");//可设置循环配置，也可一个一个配置
+    }
+}
+
+$(document).ready(function(){
+    $("#username").blur(function () {
+        var username = $("#username").val();
+        $.ajax({
+            type: "post",
+            url: "CheckUsername",
+            dataType: "html",
+            data: "username=" + username,
+            success: function (msg) {
+                if(msg=="已注册"){
+                    $("#regist_error").show();
+                }
+                if (msg == "检查通过") {
+                    $("#regist_error").hide();
+                }
+                
+            }
+        });
+    });
+});
+
+function checkName(name) {
+    if (name.length >= 6 && name.length <= 10&&/^([a-z]){6,10}/.test(name)) {
+        document.getElementById('name_error').style.display = 'none';
+       // document.getElementById("submit").setAttribute("disabled", false);
+    } else {
+        document.getElementById('name_error').style.display = 'block';
+        //document.getElementById("submit").setAttribute("disabled", true);
+    }
+}
+
+function checkPwd(pwd){
+    if (pwd.length != 6) {
+        document.getElementById('pwd_error').style.display = 'block';
+      //  document.getElementById("submit").setAttribute("disabled", true);
+    } else {
+        document.getElementById('pwd_error').style.display = 'none';
+    }
+}
+
+function verifyPwd(pwd) {
+
+    if (document.getElementById('psd1').value!= pwd) {
+        document.getElementById('verifypwd_error').style.display = 'block';
+      //  document.getElementById("submit").setAttribute("disabled", true);
+    } else {
+        document.getElementById('verifypwd_error').style.display = 'none';
+    }}
+
+function checkEmail(email) {
+    var email_reg = /^[\w-]+(\.[\w-]+)*@@([\w-]+\.)+[a-zA-Z]+$/;
+   
+    if (!email_reg.test(email)) {
+
+        document.getElementById('email_error').style.display = 'block';
+       // document.getElementById("submit").setAttribute("disabled", true);
+    } else {
+        document.getElementById('email_error').style.display = 'none';
+    }}
+
+function checkPhone(phone) {
+    var phone_reg = /^1569+([0-9]{7})+$/; 
+    if (!phone_reg.test(phone)) {
+        document.getElementById('phone_error').style.display = 'block';
+       // document.getElementById("submit").setAttribute("disabled", true);
+    } else {
+        document.getElementById('phone_error').style.display = 'none';
+    }
+}
+function AllReset() {
+    if (window.confirm("是否进行重置？"))
+        return true;
+    else return false;
+}
+
+
+$("#submit").click(function () {
+    var flag = 0;
+    
+    if (!($('#name_error').is(":hidden"))) { flag++; }
+    if (!($('#pwd_error').is(":hidden"))) { flag++; }
+    if (!($('#verifypwd_error').is(":hidden"))) { flag++; }
+    if (!($('#email_error').is(":hidden"))) { flag++; }
+    if (!($('#phone_error').is(":hidden"))) { flag++; }
+   
+    if (flag != 0) {
+        alert("请按要求填写信息！");
+        return false;
+    }
+    
+        var str = "";
+        str = "用户名：" + $("#username").val() + "\n";
+        str += "密码：" + $("#psd1").val() + "\n";
+        str += "性别：" + $(":radio[name='sex']:checked").val() + "\n";
+        str += "籍贯：" + $("#province").val();
+        str += $("#city").val() + "\n";
+        str += "邮箱：" + $("#email").val() + "\n";
+        str += "手机号码：" + $("#phone").val() + "\n";
+        var selstr = "";
+        $("#master option:selected").each(function () {
+            selstr += $(this).val() + " ";
+        });
+        str += "特长：" + selstr + "\n";
+        selstr = "";
+        $(":checkbox[name='like']:checked").each(function () {
+            selstr += $(this).val() + " ";
+        });
+        str += "爱好：" + selstr + "\n";
+        str += "个人照片：" + $("#filename").val() + "\n";
+        str += "出生年月：" + $("#data").val() + "\n";
+        str += "备注：：" + $("#beizhu").val() + "\n";
+        alert(str);
+     });
+
+</script>
+      }
+
+
+
