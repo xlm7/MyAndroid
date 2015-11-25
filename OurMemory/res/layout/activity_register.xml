@@ -1,0 +1,82 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bk1"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:background="@drawable/schoolname" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_schoolName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/classname"
+       />
+
+    <EditText
+        android:id="@+id/et_className"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/classintro"/>
+
+    <EditText
+        android:id="@+id/et_classIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:singleLine="true"
+        android:inputType="textMultiLine"
+        android:ems="10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/binding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/binging" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/flower1" />
+
+    </LinearLayout>
+
+</LinearLayout>

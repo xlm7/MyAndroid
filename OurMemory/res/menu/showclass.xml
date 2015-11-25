@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.ourmemory.ShowclassActivity" >
+
+    <item
+        android:id="@+id/menuadd"
+        android:title="添加事件"/>
+     <item
+        android:id="@+id/menuclainfo"
+        android:title="班级信息"/>
+      <item
+        android:id="@+id/menustuinfo"
+        android:title="学生信息"/>
+       <item
+        android:id="@+id/menumyinfo"
+        android:title="我的信息"/>
+     <item
+        android:id="@+id/menuexit"
+        android:title="退出账号"/>
+
+</menu>

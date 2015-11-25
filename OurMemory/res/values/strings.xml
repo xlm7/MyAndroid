@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">记忆</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_register">注册班级</string>
+    <string name="title_activity_all_student">我们...</string>
+    <string name="title_activity_signin">注册用户</string>
+    <string name="title_activity_login">登录</string>
+    <string name="title_activity_showclass">我们的那些年</string>
+    <string name="title_activity_bindclass">绑定班级</string>
+    <string name="title_activity_clainfo">班级信息</string>
+    <string name="title_activity_myinfo">我的信息</string>
+    <string name="title_activity_stuinfo">StuinfoActivity</string>
+    <string name="title_activity_add">书写记忆</string>
+    <string name="title_activity_devent">还记得吗？</string>
+    <string name="title_activity_dstu">详细信息</string>
+
+</resources>

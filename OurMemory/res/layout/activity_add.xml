@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="@drawable/welcome5"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageButton
+            android:id="@+id/actpic"
+            android:layout_width="150dp"
+            android:adjustViewBounds="true"
+            android:layout_height="187dp"
+            android:src="@drawable/flower0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" 事件名称"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/actname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/buttime"
+                android:layout_width="176dp"
+                android:layout_height="40dp"
+                android:background="@drawable/welcome5"
+                android:text="选择事件时间"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/ettime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+              >
+
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="事件简介"
+        android:textSize="25sp" />
+
+    <EditText
+        android:id="@+id/actintro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:scrollbars="vertical"
+            android:singleLine="false"
+            android:maxLines="7"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/actsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/save2" />
+
+</LinearLayout>

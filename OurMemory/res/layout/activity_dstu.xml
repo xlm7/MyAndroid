@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/welcome5"
+    android:scrollbars="vertical">
+<LinearLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/welcome5"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/stuimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/flower0" />
+
+    <TextView
+        android:id="@+id/stuname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+          android:textSize="20sp"
+        android:text="姓名" />
+
+    <TextView
+        android:id="@+id/stusex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="性别" />
+
+    <TextView
+        android:id="@+id/stuid"
+        android:layout_width="wrap_content"
+         android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:text="学号" />
+
+    <TextView
+        android:id="@+id/sturole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:textSize="20sp"
+        android:text="角色" />
+
+    <TextView
+        android:id="@+id/stuaddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+          android:textSize="20sp"
+        android:text="地址" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+         <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+          android:textSize="20sp"
+        android:text="电话:" />
+
+         <TextView
+             android:id="@+id/stuphone"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:autoLink="phone"
+               android:textSize="20sp"
+          />
+   
+    </LinearLayout>
+   
+   
+    <TextView
+        android:id="@+id/stuintro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+          android:textSize="20sp"
+        android:text="个人简介" />
+
+</LinearLayout>
+</ScrollView>

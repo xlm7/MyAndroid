@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bk1"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+    android:background="@drawable/classnum"/>
+
+    <EditText
+        android:id="@+id/classnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="right"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/login3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login" />
+
+        <Button
+            android:id="@+id/create"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/create" />
+
+    </LinearLayout>
+
+</LinearLayout>
