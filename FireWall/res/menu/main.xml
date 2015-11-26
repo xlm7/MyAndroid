@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.xlm.firewall.MainActivity" >
+
+    <item
+        android:id="@+id/listenSms"
+        android:title="监听短信"/>
+     <item
+        android:id="@+id/listenCall"
+        android:title="监听电话"/>
+      <item
+        android:id="@+id/listenBoth"
+        android:title="监听短信和电话"/>
+    
+
+</menu>
